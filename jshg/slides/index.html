@@ -219,6 +219,10 @@ JSHG.learnSkinColor();
             if (currentGesture != null && currentGesture.isSameRelativePos(gesture)) return;
             if (gesture.isLeft) {
                 nextSlide();
+            } else if(gesture.isUp){
+              alert('Moved Up');
+            } else if(gesture.isDown){
+              alert('Moved Down');
             } else if (gesture.isRight) {
                 prevSlide();
             };
