@@ -218,11 +218,7 @@ JSHG.learnSkinColor();
         var actionMapper = function(gesture) {
             if (currentGesture != null && currentGesture.isSameRelativePos(gesture)) return;
             if (gesture.isLeft) {
-                nextSlide();
-            } else if(gesture.isUp){
-              alert('Moved Up');
-            } else if(gesture.isDown){
-              alert('Moved Down');
+                nextSlide();            
             } else if (gesture.isRight) {
                 prevSlide();
             };
