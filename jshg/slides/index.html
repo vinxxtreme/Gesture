@@ -108,11 +108,9 @@
         var actionMapper = function(gesture) {
             if (currentGesture != null && currentGesture.isSameRelativePos(gesture)) return;
             if (gesture.isLeft) {
-                nextSlide();
-              xnext.play();
+                nextSlide();              
             } else if (gesture.isRight) {
-                prevSlide();
-              xprev.play();
+                prevSlide();              
             }
             currentGesture = gesture;
         }
