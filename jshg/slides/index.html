@@ -84,6 +84,7 @@
         function JSHGToggle(toggleBut) {
             toggleBut.removeClass("button-stop");
             toggleBut.removeClass("button-start");
+          $("#next").play(); 
             if (JSHG.isRunning()) {
               JSHG.stop();
               window.location.href="https://vinxxtreme.github.io/Gesture/jshg/slides/";
@@ -97,8 +98,7 @@
                 JSHG.run();
               }
               toggleBut.addClass("button-stop");
-              toggleBut.html("STOP");
-              $("#next").play();  
+              toggleBut.html("STOP");               
             }
             firstTime = false;
         }
