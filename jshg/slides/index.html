@@ -68,7 +68,12 @@
         </h3>
         <p>Hope you enjoy it and predict your own future.</p>
       </article>
-
+      <audio id="prev">        
+        <source src="Prev.mp3" type="audio/mpeg">        
+      </audio>
+      <audio id="next">        
+        <source src="Next.mp3" type="audio/mpeg">        
+      </audio>
     </section>
      <script type="text/javascript">
         var currentGesture = null;
@@ -102,9 +107,11 @@
         var actionMapper = function(gesture) {
             if (currentGesture != null && currentGesture.isSameRelativePos(gesture)) return;
             if (gesture.isLeft) {
-                nextSlide();            
+                nextSlide();
+              $("#next").play();
             } else if (gesture.isRight) {
                 prevSlide();
+              $("#prev").play();
             };
             currentGesture = gesture;
         }
