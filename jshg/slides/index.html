@@ -103,16 +103,17 @@
         var finishLearning = function() {
           $("#startInstruction").show();
         }
-
+        var xprev = document.getElementById("prev"); 
+       var xnext = document.getElementById("next"); 
         var actionMapper = function(gesture) {
             if (currentGesture != null && currentGesture.isSameRelativePos(gesture)) return;
             if (gesture.isLeft) {
                 nextSlide();
-              $("#next").play();
+              xnext.play();
             } else if (gesture.isRight) {
                 prevSlide();
-              $("#prev").play();
-            };
+              xprev.play();
+            }
             currentGesture = gesture;
         }
         JSHG.init({
