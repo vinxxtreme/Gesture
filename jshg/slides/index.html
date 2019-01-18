@@ -77,13 +77,17 @@
       <audio id="intro">        
         <source src="intro.mp3" type="audio/mpeg">        
       </audio>
+      <audio id="done">        
+        <source src="done.mp3" type="audio/mpeg">        
+      </audio>
     </section>
      <script type="text/javascript">
         var currentGesture = null;
         var firstTime = true;
         var snext = document.getElementById("next");
         var sprev = document.getElementById("prev");
-        var sintro = document.getElementById("intro"); 
+        var sintro = document.getElementById("intro");
+        var sdone = document.getElementById("done"); 
         function JSHGToggle(toggleBut) {
             toggleBut.removeClass("button-stop");
             toggleBut.removeClass("button-start");          
@@ -104,6 +108,7 @@
               toggleBut.html("STOP");               
             }
             firstTime = false;
+            sdone.play();  
         }
 
         var finishLearning = function() {
