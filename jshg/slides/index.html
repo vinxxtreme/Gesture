@@ -74,6 +74,9 @@
       <audio id="next">        
         <source src="next.mp3" type="audio/mpeg">        
       </audio>
+      <audio id="intro">        
+        <source src="intro.mp3" type="audio/mpeg">        
+      </audio>
     </section>
      <script type="text/javascript">
         var currentGesture = null;
@@ -86,6 +89,7 @@
               window.location.href="https://vinxxtreme.github.io/Gesture/jshg/slides/";
             } else {
               if (firstTime) {
+                $("#intro").play();  
                 curSlide = 1;
                 updateSlides();
                 JSHG.learnSkinColor();
@@ -102,15 +106,14 @@
         var finishLearning = function() {
           $("#startInstruction").show();
         }
-        var xprev = document.getElementById("prev"); 
-       var xnext = document.getElementById("next"); 
+        
         var actionMapper = function(gesture) {
             if (currentGesture != null && currentGesture.isSameRelativePos(gesture)) return;
             if (gesture.isLeft) {
-              xnext.play();  
+              $("#next").play();  
               nextSlide();              
             } else if (gesture.isRight) {
-              xprev.play();  
+              $("#prev").play();   
               prevSlide();              
             }
             currentGesture = gesture;
