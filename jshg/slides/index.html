@@ -81,6 +81,9 @@
      <script type="text/javascript">
         var currentGesture = null;
         var firstTime = true;
+        var snext = document.getElementById("next");
+        var sprev = document.getElementById("prev");
+        var sintro = document.getElementById("intro"); 
         function JSHGToggle(toggleBut) {
             toggleBut.removeClass("button-stop");
             toggleBut.removeClass("button-start");          
@@ -88,6 +91,7 @@
               JSHG.stop();
               window.location.href="https://vinxxtreme.github.io/Gesture/jshg/slides/";
             } else {              
+              sintro.play();  
               if (firstTime) {                 
                 curSlide = 1;
                 updateSlides();
@@ -109,10 +113,10 @@
         var actionMapper = function(gesture) {
             if (currentGesture != null && currentGesture.isSameRelativePos(gesture)) return;
             if (gesture.isLeft) {
-              $("#next").play();  
+              snext.play();  
               nextSlide();              
             } else if (gesture.isRight) {
-              $("#prev").play();   
+              sprev.play();   
               prevSlide();              
             }
             currentGesture = gesture;
