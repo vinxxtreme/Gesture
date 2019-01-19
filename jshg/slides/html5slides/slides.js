@@ -168,6 +168,14 @@ function updateSlideClass(slideNo, className) {
   }
 };
 
+function wait(ms =5000){
+   var start = new Date().getTime();
+   var end = start;
+   while(end < start + ms) {
+     end = new Date().getTime();
+  }
+};
+
 function updateSlides() {
   for (var i = 0; i < slideEls.length; i++) {
     switch (i) {
@@ -190,6 +198,7 @@ function updateSlides() {
         updateSlideClass(i);
         break;
     }
+    wait();
   }
 
   triggerLeaveEvent(curSlide - 1);
