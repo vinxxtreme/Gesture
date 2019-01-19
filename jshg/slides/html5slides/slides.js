@@ -171,13 +171,15 @@ function updateSlideClass(slideNo, className) {
 function wait(ms =5000){
    var start = new Date().getTime();
    var end = start;
-   while(end < start + ms) {
+  console.log("waiting"); 
+  while(end < start + ms) {
      end = new Date().getTime();
   }
 };
 
 function updateSlides() {
   for (var i = 0; i < slideEls.length; i++) {
+    wait();
     switch (i) {
       case curSlide - 2:
         updateSlideClass(i, 'far-past');
@@ -198,7 +200,7 @@ function updateSlides() {
         updateSlideClass(i);
         break;
     }
-    wait();
+    
   }
 
   triggerLeaveEvent(curSlide - 1);
