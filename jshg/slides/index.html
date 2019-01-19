@@ -125,7 +125,7 @@
         
         var actionMapper = function(gesture) {
             if (currentGesture != null && currentGesture.isSameRelativePos(gesture)) return;
-            wait();
+            
             if (gesture.isLeft) {
               snext.play();  
               nextSlide();              
