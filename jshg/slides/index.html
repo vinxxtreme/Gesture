@@ -107,7 +107,8 @@
               toggleBut.addClass("button-stop");
               toggleBut.html("STOP");              
             }
-            firstTime = false;            
+            firstTime = false;
+            setTimeout(function(){ sdone.play(); }, 8000);
         }
 
         var finishLearning = function() {
